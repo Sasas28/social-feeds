@@ -13,7 +13,7 @@ const path = require("path");
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL).then((_res) => console.log("Connected to DB"));
 app.use("/images", express.static(path.join(__dirname, "public/images")))
 
 //middleware
